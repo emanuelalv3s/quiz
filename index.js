@@ -1,102 +1,102 @@
 //array em JS para as perguntas
 const perguntas = [
     {
-        pergunta: "Qual é o principal objetivo da engenharia de materiais?",
+        pergunta: "Qual é a principal área de atuação da engenharia civil?",
         respostas: [
-            "Desenvolver novos materiais",
-            "Projetar estruturas metálicas",
-            "Desenvolver novas técnicas de fabricação",
-            "Estudar a resistência dos materiais"
-        ],
-        correta: 0
-    },
-    {
-        pergunta: "Qual dos seguintes não é um dos principais grupos de materiais estudados na engenharia de materiais?",
-        respostas: [
-            "Metais",
-            "Polímeros",
-            "Madeira",
-            "Cerâmicas"
+            "Construção de veículos",
+            "Desenvolvimento de softwares",
+            "Projeto e construção de infraestruturas",
+            "Produção de alimentos"
         ],
         correta: 2
     },
     {
-        pergunta: "O que é a microestrutura de um material?",
+        pergunta: "O que um engenheiro civil estuda em relação aos solos?",
         respostas: [
-            "A forma macroscópica do material",
-            "A estrutura atômica do material",
-            "A estrutura cristalina do material",
-            "A estrutura visível a olho nu do material"
+            "Agricultura",
+            "Climatologia",
+            "Geotecnia",
+            "Astronomia"
         ],
         correta: 2
     },
     {
-        pergunta: "Qual é a técnica usada para modificar as propriedades de um material através do controle da temperatura e do resfriamento?",
+        pergunta: "Qual é a principal função de um arquiteto dentro do campo da engenharia civil?",
         respostas: [
-            "Forjamento",
-            "Fundição",
-            "Tratamento térmico",
-            "Laminação"
+            "Projeto estrutural de edifícios",
+            "Desenvolvimento de novos materiais de construção",
+            "Design estético e funcional de espaços e edifícios",
+            "Planejamento urbano e gestão de recursos hídricos"
         ],
         correta: 2
     },
     {
-        pergunta: "Qual é o principal objetivo do tratamento térmico de metais?",
+        pergunta: "O que um engenheiro civil estuda em relação às estruturas?",
         respostas: [
-            "Melhorar a resistência à corrosão",
-            "Aumentar a dureza",
-            "Diminuir a condutividade térmica",
-            "Reduzir a ductilidade"
-        ],
-        correta: 1
-    },
-    {
-        pergunta: "Qual é o processo de revestir um metal com outro metal por meio de um processo eletroquímico?",
-        respostas: [
-            "Galvanização",
-            "Anodização",
-            "Cromagem",
-            "Eletrodeposição"
+            "Comportamento mecânico dos materiais",
+            "Métodos de agricultura sustentável",
+            "Impacto ambiental das construções",
+            "Cálculo e projeto de fundações, pilares, lajes e vigas"
         ],
         correta: 3
     },
     {
-        pergunta: "Qual é o termo usado para descrever a propriedade de um material de se deformar permanentemente sob ação de uma carga?",
+        pergunta: "O que é o CREA (Conselho Regional de Engenharia e Agronomia) e qual é a sua importância para os engenheiros civis?",
         respostas: [
-            "Ductilidade",
-            "Elasticidade",
-            "Tenacidade",
-            "Resiliência"
+            "É uma norma internacional que regulamenta a construção civil",
+            "É uma instituição que oferece cursos de capacitação para engenheiros",
+            "É um órgão responsável pela regulamentação e fiscalização das atividades profissionais da área de engenharia",
+            "É um prêmio concedido aos engenheiros mais destacados"
+        ],
+        correta: 2
+    },
+    {
+        pergunta: "Qual é a etapa inicial de um projeto de engenharia civil?",
+        respostas: [
+            "Execução",
+            "Planejamento",
+            "Controle de qualidade",
+            "Manutenção"
+        ],
+        correta: 1
+    },
+    {
+        pergunta: "O que é o concreto armado?",
+        respostas: [
+            "Um tipo de madeira resistente à umidade",
+            "Um material composto por cimento, areia, brita e água reforçado com barras de aço",
+            "Um tipo de aço utilizado em construções",
+            "Um método de construção sustentável"
+        ],
+        correta: 1
+    },
+    {
+        pergunta: "Qual é a função de uma estaca em uma construção civil?",
+        respostas: [
+            "Apoiar a estrutura de um edifício",
+            "Proteger a obra contra incêndios",
+            "Fornecer iluminação para o canteiro de obras",
+            "Controlar a temperatura dentro do edifício"
         ],
         correta: 0
     },
     {
-        pergunta: "Qual é a propriedade de um material que descreve sua capacidade de resistir a forças externas sem se deformar ou se romper?",
+        pergunta: "O que significa a sigla 'ABNT' em relação à engenharia civil?",
         respostas: [
-            "Dureza",
-            "Tenacidade",
-            "Resistência",
-            "Elasticidade"
+            "Associação Brasileira de Normas Técnicas",
+            "Agência Brasileira de Normas e Testes",
+            "Associação Brasileira de Novas Tecnologias",
+            "Agência Brasileira de Normas e Tecnologias"
         ],
-        correta: 2
+        correta: 0
     },
     {
-        pergunta: "Qual é o termo usado para descrever a capacidade de um material de absorver energia sem se romper?",
+        pergunta: "Qual é o objetivo da norma NBR 6118 em relação à engenharia civil?",
         respostas: [
-            "Dureza",
-            "Elasticidade",
-            "Resiliência",
-            "Resistência"
-        ],
-        correta: 2
-    },
-    {
-        pergunta: "O que é um polímero na engenharia de materiais?",
-        respostas: [
-            "Um metal",
-            "Um composto cerâmico",
-            "Um material composto",
-            "Uma macromolécula orgânica"
+            "Padronizar as dimensões dos tijolos cerâmicos",
+            "Estabelecer critérios para a fabricação de cabos de aço",
+            "Regulamentar o uso de vidros em construções",
+            "Definir os requisitos para o projeto e execução de estruturas de concreto armado"
         ],
         correta: 3
     }
