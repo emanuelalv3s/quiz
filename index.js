@@ -1,102 +1,102 @@
 //array em JS para as perguntas
 const perguntas = [
     {
-        pergunta: "Qual é a sintaxe correta para declarar uma variável em JavaScript?",
+        pergunta: "Qual é o principal objetivo da engenharia de materiais?",
         respostas: [
-            "variable x;",
-            "let x;",
-            "var x;",
-            "const x;"
+            "Desenvolver novos materiais",
+            "Projetar estruturas metálicas",
+            "Desenvolver novas técnicas de fabricação",
+            "Estudar a resistência dos materiais"
+        ],
+        correta: 0
+    },
+    {
+        pergunta: "Qual dos seguintes não é um dos principais grupos de materiais estudados na engenharia de materiais?",
+        respostas: [
+            "Metais",
+            "Polímeros",
+            "Madeira",
+            "Cerâmicas"
         ],
         correta: 2
     },
     {
-        pergunta: "Qual método JavaScript é usado para imprimir algo no console?",
+        pergunta: "O que é a microestrutura de um material?",
         respostas: [
-            "console.log()",
-            "print()",
-            "log()",
-            "console.print()"
+            "A forma macroscópica do material",
+            "A estrutura atômica do material",
+            "A estrutura cristalina do material",
+            "A estrutura visível a olho nu do material"
         ],
-        correta: 0
+        correta: 2
     },
     {
-        pergunta: "Qual é a função JavaScript usada para converter uma string em um número inteiro?",
+        pergunta: "Qual é a técnica usada para modificar as propriedades de um material através do controle da temperatura e do resfriamento?",
         respostas: [
-            "parseInt()",
-            "stringToNumber()",
-            "toInteger()",
-            "parseInteger()"
+            "Forjamento",
+            "Fundição",
+            "Tratamento térmico",
+            "Laminação"
         ],
-        correta: 0
+        correta: 2
     },
     {
-        pergunta: "Qual operador é usado para comparar dois valores em JavaScript?",
+        pergunta: "Qual é o principal objetivo do tratamento térmico de metais?",
         respostas: [
-            "==",
-            "===",
-            "!=",
-            "="
-        ],
-        correta: 0
-    },
-    {
-        pergunta: "Qual método é usado para remover o último elemento de um array em JavaScript?",
-        respostas: [
-            "removeLast()",
-            "pop()",
-            "deleteLast()",
-            "splice()"
+            "Melhorar a resistência à corrosão",
+            "Aumentar a dureza",
+            "Diminuir a condutividade térmica",
+            "Reduzir a ductilidade"
         ],
         correta: 1
     },
     {
-        pergunta: "Qual é a maneira correta de acessar o valor de um elemento HTML por seu ID em JavaScript?",
+        pergunta: "Qual é o processo de revestir um metal com outro metal por meio de um processo eletroquímico?",
         respostas: [
-            "document.getElementByID()",
-            "document.selectElementByID()",
-            "document.getElementById()",
-            "document.findElementByID()"
+            "Galvanização",
+            "Anodização",
+            "Cromagem",
+            "Eletrodeposição"
         ],
-        correta: 2
+        correta: 3
     },
     {
-        pergunta: "Qual função JavaScript é usada para arredondar um número para o inteiro mais próximo?",
+        pergunta: "Qual é o termo usado para descrever a propriedade de um material de se deformar permanentemente sob ação de uma carga?",
         respostas: [
-            "round()",
-            "ceil()",
-            "floor()",
-            "toFixed()"
+            "Ductilidade",
+            "Elasticidade",
+            "Tenacidade",
+            "Resiliência"
         ],
         correta: 0
     },
     {
-        pergunta: "Qual é a estrutura de controle usada para repetir um bloco de código até que uma condição seja falsa?",
+        pergunta: "Qual é a propriedade de um material que descreve sua capacidade de resistir a forças externas sem se deformar ou se romper?",
         respostas: [
-            "if",
-            "switch",
-            "for",
-            "while"
+            "Dureza",
+            "Tenacidade",
+            "Resistência",
+            "Elasticidade"
         ],
-        correta: 3
+        correta: 2
     },
     {
-        pergunta: "Qual é o seletor CSS usado para selecionar um elemento pelo seu ID?",
+        pergunta: "Qual é o termo usado para descrever a capacidade de um material de absorver energia sem se romper?",
         respostas: [
-            "id()",
-            ".",
-            "*",
-            "#"
+            "Dureza",
+            "Elasticidade",
+            "Resiliência",
+            "Resistência"
         ],
-        correta: 3
+        correta: 2
     },
     {
-        pergunta: "Qual é a sintaxe correta para criar uma função em JavaScript?",
+        pergunta: "O que é um polímero na engenharia de materiais?",
         respostas: [
-            "function = minhaFuncao() {}",
-            "myFunction() = function {}",
-            "function: minhaFuncao() {}",
-            "function minhaFuncao() {}"
+            "Um metal",
+            "Um composto cerâmico",
+            "Um material composto",
+            "Uma macromolécula orgânica"
         ],
         correta: 3
     }
@@ -108,6 +108,14 @@ const perguntas = [
 const quiz = document.querySelector('#quiz')
 const template = document.querySelector('template')
 
+//new é para criação de coisas novas, Set() é usado para adicionar ou tirar sem nunca repetir
+const corretas = new Set()
+// cria uma const e atribui o valor do total das perguntas, o .length faz a conta de quantos itens existem no array perguntas
+const totalDePerguntas = perguntas.length
+//cria uma cons para pegar o id acertos e o span lá do HTML
+const mostrarTotal = document.querySelector('#acertos span')
+//modifica a const mostrarTotal e atribui novo valor contatenado
+mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
 
 // for = loop ou laço de repetição
 // esse for vai transformar item para cada pergunta da minha const perguntas
@@ -121,7 +129,7 @@ for(const item of perguntas) {
     
   //um for dentro de outro for
   //esse for vai criar um loop para pegar todas as respostas
-  //para cada resposta de item.reposta, faça:
+  //para cada resposta de item.resposta, faça:
   for (let resposta of item.respostas){
     //clona o modelo do <dl> e <dt> lá do meu HTML para as minhas respostas criadas no const perguntas  
     const dt = quizItem.querySelector('dl dt').cloneNode(true)
@@ -131,9 +139,27 @@ for(const item of perguntas) {
     //
     dt.querySelector('input').setAttribute('name','pergunta-' + perguntas.indexOf(item))
     //dar um value diferente para uma das nossas respostas, value indo de 0 a 3
-    quizItem.querySelector('input').value = item.respostas.indexOf(resposta)
+    dt.querySelector('input').value = item.respostas.indexOf(resposta)
 
+    //evento de mudança de input na tela, digamos que executa um novo comando quando clicar - input
+    //onchange necessita de uma função quando estiver usando (arrow function)
+    //event vai ser a nossa mudança quando eu clicar, mudar o input
+    dt.querySelector('input').onchange = (event) => {
+       //criando constante estaCorreta e comparando se meu clique é == ao item correto (item.correta), retorno booleam (false ou true)
+       //operador == serve para comparação de valores sem considerar o tipo
+       //operador === serve para comparação estrita de valores considerando o tipo
+       const estaCorreta = event.target.value == item.correta
+       
+       corretas.delete(item)
+       
+       //cria uma condição, só entra no código estaCorreta caso voce acerte o item correto
+       if (estaCorreta) {
+        corretas.add(item)
+       }
 
+       //modifica a const mostrarTotal e atribui novo valor contatenado
+        mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+    }
     //adicionando na tela todos os meus dl, que são minhas respostas
     quizItem.querySelector('dl').appendChild(dt)
     
