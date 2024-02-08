@@ -1,0 +1,5 @@
+# TECNOLOGIAS UTILIZADAS
+- HTML
+- CSS
+- JavaScript
+- GITHUB
