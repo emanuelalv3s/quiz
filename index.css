@@ -125,14 +125,156 @@ input:checked:before {
 }
 
 
-#acertos {
-  text-align: center;
-  background-color: #A3E635;
 
+#limparRespostas {
+  margin: 0 auto;
+  
+  background-color: transparent; /* Fundo transparente */
+  color: #ffffff; /* Cor do texto */
+  border: 2px solid #334155; /* Borda sólida */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor do mouse */
+  text-align: center; /* Alinhar o texto ao centro */
+  text-decoration: none; /* Remover sublinhado padrão */
+  display: inline-block; /* Exibir como um elemento em linha */
+  transition: background-color 0.3s, color 0.3s; /* Transições suaves de cor */
+
+  display: block; /* Alterar para bloco para ocupar a largura total */
+  margin: 0 auto; /* Margem automática para centralizar horizontalmente */
+  width: fit-content; /* Definir a largura baseada no conteúdo */
+  margin-top: 10px;
+}
+
+
+
+#limparRespostas:hover {
+  background-color: #334155; /* Alterar a cor de fundo ao passar o mouse */
+  color: whitesmoke; /* Alterar a cor do texto ao passar o mouse */
+}
+
+/* Estilizando o botão de reset */
+.reset-button {
+  
+  background-color: transparent; /* Fundo transparente */
+  color: #ffffff; /* Cor do texto */
+  border: 2px solid #334155; /* Borda sólida */
+  
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Cursor do mouse */
+  text-align: center; /* Alinhar o texto ao centro */
+  text-decoration: none; /* Remover sublinhado padrão */
+  display: inline-block; /* Exibir como um elemento em linha */
+  transition: background-color 0.3s, color 0.3s; /* Transições suaves de cor */
+
+  display: block; /* Alterar para bloco para ocupar a largura total */
+  margin: 0 auto; /* Margem automática para centralizar horizontalmente */
+  width: fit-content; /* Definir a largura baseada no conteúdo */
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilizando o botão quando passar o mouse por cima */
+.reset-button:hover {
+  background-color: #334155; /* Alterar a cor de fundo ao passar o mouse */
+  color: whitesmoke; /* Alterar a cor do texto ao passar o mouse */
+}
+
+
+
+#enviarRespostasBtn {
+  background-color: #4CAF50; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 25px; /* Tamanho da fonte */
+  border: none; /* Remover borda */
+  cursor: pointer; /* Cursor ao passar */
+  border-radius: 5px; /* Arredondamento das bordas */
+
+  display: block; /* Alterar para bloco para ocupar a largura total */
+  margin: 0 auto; /* Margem automática para centralizar horizontalmente */
+  width: fit-content; /* Definir a largura baseada no conteúdo */
+  margin-top: 10px;
+}
+
+#enviarRespostasBtn:hover {
+  background-color: #334155; /* Mudança de cor ao passar o mouse */
+}
+
+
+
+
+#acertosPag {
+  text-align: center;
+  margin-top: 200px;
   position: fixed;
-  bottom: 0;
-  left: 0;
 
   width: 100%;
   padding: 12px;
+
+  /*border: 1px solid red;*/
+}
+
+#obg {
+  text-align: center;
+  margin-top: 600px;
+  position: fixed;
+  font-size: 30px;
+
+  width: 100%;
+  padding: 12px;
+
+  /*border: 1px solid red;*/
+}
+
+/* Estilo direto para a tag strong */
+strong {
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  color: white; /* Define a cor do texto */
+  font-size: 35px; /* Define o tamanho da fonte */
+  text-align: center;
+}
+
+/* Estilo para uma classe específica dentro de uma tag strong
+strong.destaque {
+  background-color: #FFFF00; /* Define a cor de fundo */
+  /*padding: 50px;  Adiciona um preenchimento interno 
+}
+ */
+
+#num{
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  color: white; /* Define a cor do texto */
+  font-size: 200px; /* Define o tamanho da fonte */
+  text-align: center;
+
+}
+
+
+#desenv{
+  color: white; /* Define a cor do texto 
+  
+  border: 1px solid red;*/
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: center;
+
+  margin-bottom: 20px;
+  
+
+}
+#img {
+  /* display: block; Alterar para bloco para ocupar a largura total */
+  margin: 0 auto; /* Margem automática para centralizar horizontalmente */
+  /*width: fit-content;  Definir a largura baseada no conteúdo */
+  margin-top: 1px;
+  width: 250px;  /*Define a largura da imagem */
+  height: 80px;
+  /*height: fit-content;  Mantém a proporção da imagem 
+  border: 1px solid red;*/
+  /* Alinha o texto verticalmente com a imagem */
+  vertical-align: middle;
 }

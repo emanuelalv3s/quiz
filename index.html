@@ -4,18 +4,35 @@
   <head>
     <script type="text/javascript" src="./index.js" defer=""></script>
     <link rel="stylesheet" href="./index.css">
+  
+    <style>
+      /* Estilo para ocultar a div inicialmente */
+      #acertosPag {
+          display: none;
+      }
+      #obg {
+          display: none;
+      }
+  </style>
+
   </head>
 
   <body>
-    <main>
 
       <header>
-        <h1> Teste seus conhecimentos sobre ENGENHARIA de MATERIAIS! </h1>
+        
+        <h1> Teste seus conhecimentos sobre ENGENHARIA DE MATERIAIS! </h1>
       </header>   
 
-      <div id="quiz"></div>
 
-      <template>
+      <main>
+        
+      <div id="quiz"></div>
+      
+      
+
+      <template id="template">
+
 
         <div class="quiz-item">
           <h3>
@@ -25,19 +42,50 @@
             <dt>
               <input type="radio" name="item" value="0">
               <span>
-            Resposta A
-            </span>
+              Resposta A
+              </span>
+              
             </dt>
           </dl>
+          <button class="reset-button">Limpar seleção</button>
         </div>
 
       </template>
+
+
+      <button id="limparRespostas">LIMPAR TODAS AS RESPOSTAS</button>
+      
+      <button id="enviarRespostasBtn">Enviar Respostas</button>
+      
+      <!--
+=======
 
       <div id="acertos">
         <strong>Acertos</strong>
         <span>0 de 10</span>
       </div>
+
+      -->
     </main>
+
+    <div id="acertosPag">
+      <strong>Acertos</strong>
+      <br><span id="num">0 de 10</span>
+    </div>
+
+
+    <div id="desenv">
+      <span >Desenvolvido por:</span>
+    <img src="./img/logo.png" alt="logo" id="img">
+    </div>
+
+    <strong id="obg">Obrigado por responder este quiz!</strong>
   </body>
 
 </html>
+
+<!-- coisas que quuero implementar no projeto
+- botão de desmarcar a opção selecionada
+- botão de enviar respostas
+-->
+

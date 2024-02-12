@@ -113,17 +113,21 @@ const corretas = new Set()
 // cria uma const e atribui o valor do total das perguntas, o .length faz a conta de quantos itens existem no array perguntas
 const totalDePerguntas = perguntas.length
 //cria uma cons para pegar o id acertos e o span lá do HTML
-const mostrarTotal = document.querySelector('#acertos span')
+
+
+//const mostrarTotal = document.querySelector('#acertos span')
 //modifica a const mostrarTotal e atribui novo valor contatenado
-mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+//mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+
+
+
 
 // for = loop ou laço de repetição
 // esse for vai transformar item para cada pergunta da minha const perguntas
 for(const item of perguntas) {
   
   //clona  o template do meu HTML para a const quizItem (para 1 item apenas)
-
-  const quizItem = template.content.cloneNode(true)
+  const quizItem = template.content.cloneNode(true);
   //busca o <h3> e modifica para cada pergunta
   quizItem.querySelector('h3').textContent = item.pergunta
     
@@ -159,18 +163,113 @@ for(const item of perguntas) {
 
        //modifica a const mostrarTotal e atribui novo valor contatenado
         mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+    
     }
     //adicionando na tela todos os meus dl, que são minhas respostas
     quizItem.querySelector('dl').appendChild(dt)
     
   }
 
+    
   //remove o ('dl dt') que corresponde ao modelo das minhas respostas, que é o 'Resposta A', junto do seu span e tudo
   quizItem.querySelector('dl dt').remove()
 
   //coloca a pergunta na tela
   quiz.appendChild(quizItem)
 }
+
+
+
+
+
+// LOGICA para limpar selecao dos itens individualmente para cada pergunta
+// Iterar sobre cada pergunta
+document.querySelectorAll('.quiz-item').forEach((item, index) => {
+    // Encontrar o botão dentro da div quiz-item atual
+    const resetButton = item.querySelector('.reset-button');
+    
+    // Adicionar um evento de clique ao botão
+    resetButton.addEventListener('click', () => {
+        // Encontrar todas as opções de resposta para esta pergunta
+        const options = item.querySelectorAll('input[type="radio"]');
+        
+        // Iterar sobre todas as opções e desmarcar
+        options.forEach(option => {
+            option.checked = false;
+        });
+
+    });
+});
+
+
+
+
+
+// LOGICA para limpar selecao de TODOS os itens do meu quiz
+// Adicionando evento de clique ao botão de limpar respostas
+const limparRespostasBtn = document.getElementById('limparRespostas');
+limparRespostasBtn.addEventListener('click', () => {
+    // Desmarca todos os inputs de resposta
+    const inputs = document.querySelectorAll('input[type="radio"]');
+    inputs.forEach(input => {
+        input.checked = false;
+    });
+    // Atualiza a exibição do total de respostas corretas
+    mostrarTotal.textContent = "0 de " + totalDePerguntas;
+    
+});
+
+
+
+
+
+
+
+// Selecione o botão "Enviar Respostas"
+const enviarRespostasBtn = document.getElementById('enviarRespostasBtn');
+
+// Adicione um ouvinte de evento de clique ao botão
+enviarRespostasBtn.addEventListener('click', function() {
+    //alert("Botão 'Enviar Respostas' clicado!"); // Mensagem para depuração
+
+    // Selecione o elemento main que contém todo o conteúdo
+    const mainElement = document.querySelector('main');
+
+    // Verifique se o elemento main foi selecionado corretamente
+    //alert(mainElement); // Mensagem para depuração
+
+    // Oculte o elemento main
+    mainElement.style.display = 'none';
+
+    // Calcule o número de respostas corretas
+    const numeroDeAcertos = corretas.size;
+
+    // Verifique se o número de acertos está correto
+    //alert(`Número de acertos: ${numeroDeAcertos}`); // Mensagem para depuração
+
+    // Selecione o elemento que exibe o número de acertos
+    const acertosElement = document.getElementById('acertosPag');
+
+    // Verifique se o elemento de acertos foi selecionado corretamente
+    ////alert(acertosElement); // Mensagem para depuração
+
+    // Atualize o texto para mostrar o número de acertos
+    //acertosElement.innerHTML = `<strong>Acertos:</strong> ${numeroDeAcertos} de 10`;
+    //acertosElement.style.display = 'block';
+    // Verifique se a atualização do texto foi feita corretamente
+   //alert(acertosElement.innerHTML); // Mensagem para depuração
+
+
+   const mostrarTotal = document.querySelector('#acertosPag span')
+    //modifica a const mostrarTotal e atribui novo valor contatenado
+    mostrarTotal.textContent = corretas.size + " de " + totalDePerguntas
+
+    acertosPag.style.display = 'block';
+
+    obg.style.display = 'block';
+});
+
+
 
 
 
