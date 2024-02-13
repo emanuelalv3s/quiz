@@ -170,6 +170,15 @@ for(const item of perguntas) {
     
   }
 
+//ESSA FUNÇÃO está verificando se todas as respostas estao sendo selecionadas(respondidas) pelo usuário
+  function todasPerguntasRespondidas() {
+    // Seleciona todos os inputs de radio que estão marcados (respondidos)
+    const inputsRespondidos = document.querySelectorAll('input[type="radio"]:checked');
+    
+    // Retorna verdadeiro se o número de inputs respondidos for igual ao número total de perguntas
+    return inputsRespondidos.length === totalDePerguntas;
+    }
+
     
   //remove o ('dl dt') que corresponde ao modelo das minhas respostas, que é o 'Resposta A', junto do seu span e tudo
   quizItem.querySelector('dl dt').remove()
@@ -231,6 +240,10 @@ const enviarRespostasBtn = document.getElementById('enviarRespostasBtn');
 // Adicione um ouvinte de evento de clique ao botão
 enviarRespostasBtn.addEventListener('click', function() {
     //alert("Botão 'Enviar Respostas' clicado!"); // Mensagem para depuração
+    if (!todasPerguntasRespondidas()) {
+        alert("Por favor, responda todas as perguntas antes de enviar."); // Exibe mensagem de alerta
+        return; // Interrompe a execução da função
+    } 
 
     // Selecione o elemento main que contém todo o conteúdo
     const mainElement = document.querySelector('main');
